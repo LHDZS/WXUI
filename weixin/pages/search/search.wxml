@@ -1,0 +1,108 @@
+  <!-- <view class="search">
+  <view class="search-bar">
+    <view class="search-wrap">
+        <icon type="search" size="16" class="icon-search" />
+        <input type="text" placeholder="请输入搜索内容" class="search-input" name="searchKeyword" bindinput="bindKeywordInput" value="{{searchKeyword}}" />
+    </view>
+    <view class="search-cancel" bindtap="keywordSearch">搜索</view>
+  </view>
+  <view class="search-result">
+    <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+      <view class="result-item" wx:for="{{searchSongList}}" wx:key="unique"  data-data="{{item}}" >
+        <view class="icon{{item.isonly=='0' ? ' nocopyright' : ''}}"></view>
+        <text class="title">{{item.name}}</text>
+        <view class="subtitle">
+          <text wx:for="{{item.singer}}" wx:key="unique">{{item.name}}</text>
+        </view>
+      </view>
+      <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+    </scroll-view>  
+  </view>
+</view>   -->
+
+
+<!-- <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>  
+ <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="loadMore" bindscrolltoupper="refesh">
+      <view wx:if="{{hasRefesh}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+      <icon type="waiting" size="45"/><text>刷新中...</text></view>
+      <view wx:else  style="display:none" ><text></text></view>
+  <view class="lll"  wx:for="{{list}}" wx:for-item="item" bindtap="bindViewTap" 
+         data-title="{{item.title}}" >
+      <image style=" width: 240rpx;height: 240rpx;margin: 20rpx;" src="https://yg.xiaoniren.cn{{item.image}}"></image>
+      <view  class="eee" > 
+       <view style="margin:5px;font-size:40rpx"><text>{{item.name}}\n</text></view>
+       <view style="margin:5px;color:red;font-size:30rpx"> 价格：{{item.market_price}}</view>
+       </view>
+</view>
+<view class="tips1">
+      <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+      <icon type="waiting" size="45"/><text>玩命的加载中...</text></view>
+      <view wx:else><text>没有更多内容了</text></view>
+    </view>
+ </scroll-view> -->
+
+
+<!-- <view  class="page">
+  <view class="page__bd">
+
+  <template name="msgTemp">
+
+  <view  class="weui-panel__bd">
+  <navigator url="../detail/detail?id={{id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+  <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+  <image class="weui-media-box__thumb" src="{{src}}" style="width: 60px; height: 60px;"/>
+  </view>
+  <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+  <view class="weui-media-box__title">{{title}}</view>
+  <view class="weui-media-box__desc">{{time}}</view>
+  </view>
+  </navigator>
+  </view>
+  </template>
+  <scroll-view scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper="pullDownRefresh"  bindscroll="scroll" bindscrolltolower="pullUpLoad" class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd">文章列表</view>
+  <view wx:for-items="{{msgList}}" wx:key="{{item.id}}">
+  <view class="kind-list__item">
+
+  <template is="msgTemp" data="{{item}}"/>
+   <text>{{item.name}}\n</text>
+  <image src='https://yg.xiaoniren.cn/{{item.image}}'></image>
+  </view>
+  </view>
+  </scroll-view>
+  <view>
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+  </loading>
+  </view>
+  </view>
+  <view class="page__ft">
+  </view>
+</view> -->
+
+  <!--
+  1. scaleToFill : 图片全部填充显示，可能导致变形 默认
+  2. aspectFit ： 图片全部显示，以最长边为准
+  3. aspectFill ： 图片全部显示，以最短边为准
+  4. widthFix ： 宽不变，全部显示图片
+  -->
+
+
+
+  <view class='shop' wx:for="{{shopList}}" wx:key="id">
+  <image class='shop-img' src='{{item.images[0]}}'></image>
+  <view class='shop-info'>
+    <text class='shop-title ell'>店铺名称：{{item.name}}</text>
+    <text class='shop-tel'>电话：{{item.phone}}</text>
+    <text class='shop-address'>地址：{{item.address}}</text>
+    <text class='shop-time'>营业名称：{{item.tags[0]}}</text>
+  </view>
+  <view class='shop-star'>
+    
+    <view class='star-before' style='width:{{item.score}}%'>★★★★★</view>
+    <view class='star-after'>★★★★★</view>
+  </view>
+</view>

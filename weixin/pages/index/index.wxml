@@ -1,0 +1,47 @@
+
+  <!-- <view class='detail_img'>
+ <view class='view_img' wx:for="{{imglist}}" wx:for-item="image">
+  <image src='{{image}}' data-src="{{image}}" bindtap="previewImage" style='witdh:100%'></image>
+  </view>
+ <view style='clear:both;'></view>
+ </view>   -->
+ <view class='search'><navigator url='/pages/search/search'>点我跳转</navigator></view> 
+<!--  轮播图 -->
+<swiper class='img' indicator-dots="{{dotsBoll}}" interval="{{interval}}" duration="{{duration}}" autoplay="{{autoplay}}" bindchange="bindchange">
+    <block wx:for-items="{{imageUrls}}">
+         <swiper-item class="tt">
+            <image class='t' src="{{item}}" bindtap="swipclick"></image>
+        </swiper-item> 
+    </block>
+</swiper>
+
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">Grid</view>
+        <view class="page__desc">九宫格</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-grids">
+            <block  wx:key="*this" wx:for="{{name}}" wx:for-item="names">
+                <navigator url="" class="weui-grid" wx:for="{{imglist}}" hover-class="weui-grid_active">
+                     <image class="weui-grid__icon" src='{{item}}' data-src="{{item}}" bindtap="previewImage" /> 
+                    <view class="weui-grid__label">{{names}}</view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+</view> 
+
+ <view class="container">
+    <video src="{{src}}"></video>
+    <button bindtap="bindButtonTap">获取视频</button>
+</view> 
+ 
+ <!-- <view class="commodity_top"><text>所有商品</text></view>
+<view wx:for="{{list}}" wx:if="{{index<4}}" class="commoditylist" data-id="{{index}}">
+<navigator class="" url= "/pages/product/product?Projectid={{item.id}}" hover- class="navigator-hover">
+<image class="second-img"  style= "height:154px;" src= "https://yg.xiaoniren.cn{{item.image}}"> </image>          
+<text>{{item.name}}\n</text>
+<view class="fl price">¥{{item.price}} </view><view class="fr goumai">立即购买</view>
+</navigator>
+</view>   -->
